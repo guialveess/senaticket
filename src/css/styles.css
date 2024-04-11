@@ -1,0 +1,191 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --border: 1px solid #ffffff1a;
+}
+
+body,
+input,
+button {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+body {
+  background-color: #121214;
+  scroll-behavior: smooth;
+  margin: 0;
+}
+
+.quadrado {
+  width: 90%;
+  max-width: 400px;
+  height: 55px;
+  background-color: #EBEBEB;
+  border-radius: 60px;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#bola {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: girar 5s linear infinite;
+}
+
+@keyframes girar {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg); 
+  }
+}
+@media only screen and (min-width: 768px) {
+  #bola {
+    top: 15%;
+  }
+}
+
+h1{
+  font-family: "Zen Dots", sans-serif;
+  font-weight: 1200;
+  font-style: normal;
+  font-size: 24px;
+}
+
+h2 {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: #FFFFFF;
+  transition: all .3s ease-out;
+  text-align: center;
+  margin-top: 9rem;
+  margin-bottom: 40px;
+}
+
+.input-wrapper {
+  width: 335px;
+  height: 44px;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  color: #EBEBEB;
+  margin-bottom: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+.input-wrapper svg {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .input-wrapper svg {
+    margin-top: -5px;
+  }
+}
+
+input {
+  font-style: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #FFFFFF;
+  all: unset;
+}
+
+.button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.button-ingress {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+button {
+  width: 335px;
+  height: 53px;
+  border: 0;
+  background: #F48F56;
+  border-radius: 10px;
+  padding: 7px 20px;
+  color: #FFFFFF;
+  font: 700 12px/24px 'Roboto', sans-serif;
+}
+
+button:hover {
+  background-color: #f37c37;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+.card {
+  width: 358px;
+  max-width: 400px;
+  height: 540px;
+  border-radius: 20px;
+  background-color: #292c32;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  position: relative; /* Adiciona position relative para posicionar os botões */
+}
+
+.card img {
+  max-width: 100%;
+  height: auto; /* Adiciona isso para manter a proporção original */
+  position: absolute;
+  border-radius: 20px;
+  top: 0px; 
+  left: 2px; 
+  z-index: 1;
+}
+
+.quebra {
+  text-align: center; /* Centraliza a imagem horizontalmente */
+  margin-top: 20px; /* Espaçamento superior */
+}
+
+.quebra img {
+  max-width: 200px; /* Define a largura máxima da imagem */
+  height: auto; /* Mantém a proporção original */
+  border-radius: 10px; /* Borda arredondada */
+  margin-top: 20px;
+  margin-left: 130px;
+}
+
+.faixa img {
+  max-width: 999px; 
+  height: auto; 
+  margin-top: -235px;
+  margin-left: 140px;
+}
+

@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body{
+    background-color: #121214
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100vh;
+    margin-top: -380px;
+}
+
+#faixa {
+    max-width: 100%;
+    height: auto;
+    height: 200px;
+    z-index: 99;
+    align-self: center;
+}
+
+#quebra {
+    max-width: 100%;
+    height: auto;
+    z-index: 99;
+    align-self: center;
+}
+
+.card {
+    width: 327px;
+    margin: 0 auto;
+    height: 604px;
+    background-color: #1E293B; /* cor de fundo do card */
+    margin-top: 20px; /* espaçamento entre o card e a quebra */
+    align-self: center; /* centraliza o card horizontalmente */
+    margin-left: 0 auto; /* centraliza o card horizontalmente */
+    margin-right: 0 auto; /* centraliza o card horizontalmente */
+    position: relative;
+    top: -400px;
+    border-radius: 16px;
+}
+
+#name {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinha os itens ao centro horizontalmente */
+}
+
+
+#name h1 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #ffffff;
+    font-size: 24px; 
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 5px; /* Espaçamento entre o título e o parágrafo */
+}
+
+#email {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 0;
+}
