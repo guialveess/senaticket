@@ -84,7 +84,7 @@ button {
     padding: 7px 20px;
     color: #000;
     font-family: 'Roboto', sans-serif;
-    font-weight: 700;
+    font-weight: 900;
     position: absolute;
     top: 55%; /* Posiciona o topo do botão no meio do card */
     left: 50%; /* Posiciona a esquerda do botão no meio do card */
@@ -125,4 +125,25 @@ button {
     top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#btncodingress {
+    width: 191px;
+    height: 39px;
+    border: 0;
+    background: #ED7E7E;
+    border-radius: 10px;
+    padding: 7px 20px;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    position: relative; 
+    top: -450px; /* Posiciona o topo do botão no meio do card */
+    left: 50%; /* Posiciona a esquerda do botão no meio do card */
+    transform: translate(-50%, -50%); /* Centraliza o botão precisamente */
+    pointer-events: auto; /* Permite que o botão receba eventos de clique */
+}
+
+#btncodingress:hover {
+    background: #f37c37;
 }
