@@ -43,6 +43,7 @@ body{
     margin-right: 0 auto; /* centraliza o card horizontalmente */
     position: relative;
     top: -400px;
+    align-items: center;
     border-radius: 16px;
 }
 
@@ -72,4 +73,56 @@ body{
     font-size: 14px;
     text-align: center;
     margin-top: 0;
+}
+
+button {
+    width: 191px;
+    height: 39px;
+    border: 0;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 7px 20px;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    position: absolute;
+    top: 55%; /* Posiciona o topo do botão no meio do card */
+    left: 50%; /* Posiciona a esquerda do botão no meio do card */
+    transform: translate(-50%, -50%); /* Centraliza o botão precisamente */
+    pointer-events: auto; /* Permite que o botão receba eventos de clique */
+}
+
+
+  button:hover{
+    background-color: #f37c37;
+  }
+
+
+  .left-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 12px;
+    padding-left: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: white; /* cor do texto */
+}
+
+.right-text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 12px;
+    padding-right: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: white; /* cor do texto */
+}
+
+#qrcode-2 {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
