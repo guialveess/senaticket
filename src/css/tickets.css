@@ -1,149 +1,247 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-  
-body{
-    background-color: #121214
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body{
+        background-color: #121214
+    }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    height: 100vh;
-    margin-top: -380px;
-}
-
-#faixa {
-    max-width: 100%;
-    height: auto;
-    height: 200px;
-    z-index: 99;
-    align-self: center;
-}
-
-#quebra {
-    max-width: 100%;
-    height: auto;
-    z-index: 99;
-    align-self: center;
-}
-
-.card {
-    width: 327px;
-    margin: 0 auto;
-    height: 604px;
-    background-color: #1E293B; /* cor de fundo do card */
-    margin-top: 20px; /* espaçamento entre o card e a quebra */
-    align-self: center; /* centraliza o card horizontalmente */
-    margin-left: 0 auto; /* centraliza o card horizontalmente */
-    margin-right: 0 auto; /* centraliza o card horizontalmente */
-    position: relative;
-    top: -400px;
-    align-items: center;
-    border-radius: 16px;
-}
-
-#name {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Alinha os itens ao centro horizontalmente */
-}
+    .top-bar {
+        position: relative;
+        top: 0;
+        left: 0;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        width: 100%;
+        height: 60px;
+        background-color: rgba(200, 200, 200, 0.04);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        z-index: 99;
+    }
+    
+    .container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+    }
 
 
-#name h1 {
-    font-family: "Roboto", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    color: #ffffff;
-    font-size: 24px; 
-    text-align: center;
-    margin-top: 80px;
-    margin-bottom: 5px; /* Espaçamento entre o título e o parágrafo */
-}
+    /* #faixa {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -3%; 
+        z-index: 99;
+    } */
 
-#email {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: #ffffff;
-    font-size: 14px;
-    text-align: center;
-    margin-top: 0;
-}
-
-button {
-    width: 191px;
-    height: 39px;
-    border: 0;
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 7px 20px;
-    color: #000;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 900;
-    position: absolute;
-    top: 55%; /* Posiciona o topo do botão no meio do card */
-    left: 50%; /* Posiciona a esquerda do botão no meio do card */
-    transform: translate(-50%, -50%); /* Centraliza o botão precisamente */
-    pointer-events: auto; /* Permite que o botão receba eventos de clique */
-}
+    /* #quebra {
+        position: absolute;
+        left: -5%;
+        transform: translateX(-50%);
+        top: -5%; 
+        z-index: 99;
+    } */
 
 
-  button:hover{
-    background-color: #f37c37;
-  }
+    .card {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 327px;
+        height: auto; 
+        height: 604px;
+        background-color: #1E293B;
+        border-radius: 16px;
+    }
+
+    .quebra {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 96px;
+        height: 10px;
+        background-color: #000;
+        border-radius: 12px;
+    }
+
+    #name {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
 
-  .left-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 12px;
-    padding-left: 20px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    color: white; /* cor do texto */
-}
+    #name h1 {
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        color: #ffffff;
+        font-size: 24px; 
+        text-align: center;
+        margin-top: 80px;
+        margin-bottom: 5px; /* Espaçamento entre o título e o parágrafo */
+    }
 
-.right-text {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 12px;
-    padding-right: 20px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    color: white; /* cor do texto */
-}
+    #email {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #ffffff;
+        font-size: 14px;
+        text-align: center;
+        margin-top: 0;
+    }
 
-#qrcode-2 {
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+    .amplier {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #ffffff;
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
 
-#btncodingress {
-    width: 191px;
-    height: 39px;
-    border: 0;
-    background: #ED7E7E;
-    border-radius: 10px;
-    padding: 7px 20px;
-    color: #000;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 900;
-    position: relative; 
-    top: -450px; /* Posiciona o topo do botão no meio do card */
-    left: 50%; /* Posiciona a esquerda do botão no meio do card */
-    transform: translate(-50%, -50%); /* Centraliza o botão precisamente */
-    pointer-events: auto; /* Permite que o botão receba eventos de clique */
-}
+    button {
+        width: 191px;
+        height: 39px;
+        border: 0;
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 7px 20px;
+        color: #000;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 900;
+        position: absolute;
+        top: 55%; /* Posiciona o topo do botão no meio do card */
+        left: 50%; /* Posiciona a esquerda do botão no meio do card */
+        transform: translate(-50%, -50%); /* Centraliza o botão precisamente */
+        pointer-events: auto; /* Permite que o botão receba eventos de clique */
+    }
 
-#btncodingress:hover {
-    background: #f37c37;
-}
+
+    button:hover{
+        background-color: #f37c37;
+    }
+
+
+    .left-text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 12px;
+        padding-left: 20px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        color: white; /* cor do texto */
+    }
+
+    .right-text {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 12px;
+        padding-right: 20px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        color: white; /* cor do texto */
+    }
+
+    #qrcode-2 {
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #btncodingress {
+        width: 50%;
+        max-width: 191px;
+        height: 39px;
+        border: 0;
+        background: #ED7E7E;
+        border-radius: 10px;
+        padding: 7px 20px;
+        color: #000;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 900;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 50%; 
+        margin-top: 305px;
+    }
+
+    @media only screen and (max-device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
+        #btncodingress {
+            margin-top: 310px;
+        }
+    }
+
+
+    #btncodingress:hover {
+        background: #f37c37;
+    }
+
+    .centered-svg {
+        color: white;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    h1 {
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        color: #ffffff;
+        font-size: 24px; 
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    p {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #ffffff;
+        font-size: 14px;    
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    hr {
+        background-color: rgba(200, 200, 200, 0.1);
+        height: 1px;
+        border: 0;
+    }
+    
+
+    #buttonShare {
+        width: 327px;
+        height: 52px;
+        border: 0;
+        background: #35374B;
+        border-radius: 10px;
+        padding: 7px 20px;
+        color: #fff;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 900;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 100%; 
+        margin-top: 20px;
+    }
+
+    #buttonShare:hover{
+        background-color: #fff;
+        color: #000;
+    }
