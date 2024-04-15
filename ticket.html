@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <script src="./src/css/js/ticket.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,11 +14,15 @@
     <title>Ticket</title>
 </head>
 <body>
-    <div class="container">
-        <img src="./assets/faixa.jpg" id="faixa" alt="faixa">
-        <img src="./assets/quebra.png" id="quebra" alt="quebra">
+    <div class="top-bar">
+        Meu ingresso
     </div>
-    <div class="card">
+    <div class="container">
+        <!-- <img src="./assets/faixa.jpg" id="faixa" alt="faixa">
+        <img src="./assets/quebra.png" id="quebra" alt="quebra"> -->
+        <div class="faixa"></div>
+        <div class="card">
+            <div class="quebra"></div>
             <img src="./assets/Rectangle.png" alt="desenho">
             <p class="left-text">21/04</p>
             <p class="right-text">Sena/Ticket</p>
@@ -33,20 +39,35 @@
             <button id="meuBotao" type="submit">Time: Sport</button>
         </div>
         
-        <div id="qrcode-2"></div>
+        <div id="qrcode-2">
+            <p class="amplier">Ampliar Qr-Code</p>
+        </div>
         <script type="text/javascript">
 var qrcode = new QRCode(document.getElementById("qrcode-2"), {
     text: "765765757575675756756756",
-    width: 128,
-    height: 128,
-    colorDark: "#5868bf",
+    width: 120,
+    height: 120,
+    colorDark: "#E1E1E6",
     colorLight: "transparent", // torna a cor branca transparente
     correctLevel: QRCode.CorrectLevel.H
 });
         </script>
     </div>
+    </div>
     <div class="button-wrapper2">
         <button id="btncodingress" type="submit">#00192</button>
-    </div>
+    </div>  
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-down centered-svg">
+            <path d="m7 6 5 5 5-5"/>
+            <path d="m7 13 5 5 5-5"/>
+        </svg>
+        <h1>
+            Compartilhar meu Ingresso
+        </h1>
+        <p>
+        Compartilhe com seus amigos qual jogo você vai assistir!
+        </p>
+        <button id="buttonShare" type="submit">Compartilhar</button>
 </body>
 </html>
