@@ -26,13 +26,57 @@
     <h2>Insira o codigo do ingresso:</h2>
     <div class="input-wrapper">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_4006_93)">
+          <path d="M10 13.3334C11.8409 13.3334 13.3333 11.841 13.3333 10C13.3333 8.15907 11.8409 6.66669 10 6.66669C8.15905 6.66669 6.66667 8.15907 6.66667 10C6.66667 11.841 8.15905 13.3334 10 13.3334Z" stroke="#9FF9CC" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M13.3333 6.66669V10.8334C13.3333 11.4964 13.5967 12.1323 14.0656 12.6011C14.5344 13.07 15.1703 13.3334 15.8333 13.3334C16.4964 13.3334 17.1323 13.07 17.6011 12.6011C18.0699 12.1323 18.3333 11.4964 18.3333 10.8334V10C18.3333 8.12278 17.6995 6.30053 16.5345 4.8285C15.3695 3.35648 13.7416 2.32092 11.9146 1.88962C10.0876 1.45832 8.16844 1.65653 6.46814 2.45215C4.76783 3.24777 3.38597 4.59419 2.54644 6.27325C1.70691 7.95231 1.45889 9.86565 1.84258 11.7033C2.22627 13.5409 3.21918 15.1951 4.66044 16.398C6.10169 17.6008 7.90687 18.2818 9.78348 18.3305C11.6601 18.3793 13.4982 17.793 15 16.6667" stroke="#9FF9CC" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <defs>
+          <clipPath id="clip0_4006_93">
+          <rect width="20" height="20" fill="white"/>
+          </clipPath>
+          </defs>
+          </svg>
+          <input type="email" id="email" name="email" placeholder="Email">
+      </div>
+    <div class="input-wrapper">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1.66669 7.50002C2.32973 7.50002 2.96561 7.76341 3.43445 8.23225C3.90329 8.70109 4.16669 9.33698 4.16669 10C4.16669 10.6631 3.90329 11.2989 3.43445 11.7678C2.96561 12.2366 2.32973 12.5 1.66669 12.5V14.1667C1.66669 14.6087 1.84228 15.0326 2.15484 15.3452C2.4674 15.6578 2.89133 15.8334 3.33335 15.8334H16.6667C17.1087 15.8334 17.5326 15.6578 17.8452 15.3452C18.1578 15.0326 18.3334 14.6087 18.3334 14.1667V12.5C17.6703 12.5 17.0344 12.2366 16.5656 11.7678C16.0967 11.2989 15.8334 10.6631 15.8334 10C15.8334 9.33698 16.0967 8.70109 16.5656 8.23225C17.0344 7.76341 17.6703 7.50002 18.3334 7.50002V5.83335C18.3334 5.39133 18.1578 4.9674 17.8452 4.65484C17.5326 4.34228 17.1087 4.16669 16.6667 4.16669H3.33335C2.89133 4.16669 2.4674 4.34228 2.15484 4.65484C1.84228 4.9674 1.66669 5.39133 1.66669 5.83335V7.50002Z" stroke="#9FF9CC" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M10.8333 4.16669V5.83335" stroke="#9FF9CC" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M10.8333 14.1667V15.8334" stroke="#9FF9CC" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M10.8333 9.16669V10.8334" stroke="#9FF9CC" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            <input id="codigoIngresso" type="text" placeholder="Código do Ingresso">
+            <input type="text" id="codigo" name="codigo" placeholder="Código do Ingresso">
       </div>
+
+        <script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('acessarIngresso').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            var email = document.getElementById('email').value;
+            var codigoInserido = document.getElementById('codigo').value;
+            var codigoGerado = localStorage.getItem(email);
+
+            if (!codigoGerado) {
+                alert('Email não encontrado. Por favor, insira o email correto.');
+                return;
+            }
+
+            if (codigoInserido === codigoGerado) {
+                alert('Código correto! Você pode acessar seu ingresso.');
+                setTimeout(function() {
+                    window.location.href = 'ticket.html';
+                }, 1000); // Redireciona após 3 segundos
+            } else {
+                alert('Código ou email inválido. Verifique e tente novamente.');
+            }
+        });
+    });
+
+
+        </script>
+        
       <div class="button-ingress">
         <button id="acessarIngresso" type="submit">Acessar meu Ingresso</button>
       </div>
