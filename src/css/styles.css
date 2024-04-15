@@ -15,6 +15,25 @@ button {
   font-weight: 400;
 }
 
+#gradientheader {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  height: 50%;
+  animation: fadeIn 3s ease-in-out forwards;
+  transition: transform 0.3s ease;
+}
+@keyframes moveGradient {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+
 body {
   background-color: #121214;
   scroll-behavior: smooth;
@@ -57,8 +76,8 @@ body {
 }
 
 h1{
-  font-family: "Zen Dots", sans-serif;
-  font-weight: 1200;
+  margin: 0;
+  font-family: "Inter", sans-serif;
   font-style: normal;
   font-size: 24px;
 }
@@ -122,6 +141,12 @@ input {
   gap: 12px;
 }
 
+#codigo-gerado{
+  color: #f37c37;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 button {
   width: 335px;
   height: 53px;
@@ -156,12 +181,12 @@ a {
   padding: 20px;
   box-sizing: border-box;
   margin: 0 auto;
-  position: relative; /* Adiciona position relative para posicionar os botões */
+  position: relative;
 }
 
 .card img {
   max-width: 100%;
-  height: auto; /* Adiciona isso para manter a proporção original */
+  height: auto;
   position: absolute;
   border-radius: 20px;
   top: 0px; 
@@ -170,14 +195,14 @@ a {
 }
 
 .quebra {
-  text-align: center; /* Centraliza a imagem horizontalmente */
-  margin-top: 20px; /* Espaçamento superior */
+  text-align: center;
+  margin-top: 20px;
 }
 
 .quebra img {
-  max-width: 200px; /* Define a largura máxima da imagem */
-  height: auto; /* Mantém a proporção original */
-  border-radius: 10px; /* Borda arredondada */
+  max-width: 200px; 
+  height: auto;
+  border-radius: 10px; 
   margin-top: 20px;
   margin-left: 130px;
 }
@@ -189,3 +214,97 @@ a {
   margin-left: 140px;
 }
 
+.vertical-line {
+  width: 2px;
+  height: 70vh; 
+  background-color: #fdc0bf; 
+  position: absolute;
+  left: 50%; 
+  transform: translateX(-50%); 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 20px 0;
+  transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.dot {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dot::before {
+  content: '';  
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%; 
+  margin-right: 0px; 
+  transition: opacity 0.5s; 
+}
+
+.timeex {
+  font-size: 15px;
+  margin-bottom: 5px;
+  color: #EBEBEB;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  position: absolute;
+  transform: translateY(-100%);
+}
+
+.description {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  margin-right: -20px;
+  font-style: normal;
+  font-size: 16px;
+  text-align: center;
+  position: absolute;
+  color: #ccc;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.dot-1::before {
+  top: 0; 
+}
+
+.dot-2::before {
+  top: 50%;
+}
+
+.dot-3::before {
+  bottom: 0; 
+}
+
+.left {
+  left: -140px;
+}
+
+.right {
+  right: -100px;
+}
+
+h3 {
+  font-family: "Zen Dots", sans-serif;
+  font-weight: 1200;
+  font-style: normal;
+  font-size: 24px;
+  color: #FFFFFF;
+  transition: all .3s ease-out;
+  text-align: center;
+}
+
+#experiencetext1{
+  margin-bottom: 70px;
+  margin-top: 30px;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 400;
+}
