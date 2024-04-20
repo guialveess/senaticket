@@ -48,6 +48,8 @@
     } */
 
 
+    
+
     .card {
         position: absolute;
         top: 50%;
@@ -120,7 +122,7 @@
         font-family: 'Roboto', sans-serif;
         font-weight: 900;
         position: absolute;
-        top: 55%; /* Posiciona o topo do botão no meio do card */
+        top: 52%; /* Posiciona o topo do botão no meio do card */
         left: 50%; /* Posiciona a esquerda do botão no meio do card */
         transform: translate(-50%, -50%); /* Centraliza o botão precisamente */
         pointer-events: auto; /* Permite que o botão receba eventos de clique */
@@ -156,7 +158,7 @@
 
     #qrcode-2 {
         position: absolute;
-        top: 75%;
+        top: 63%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
@@ -244,4 +246,22 @@
     #buttonShare:hover{
         background-color: #fff;
         color: #000;
+    }
+
+    #fotoPerfil {
+        width: 150px;
+        border-radius: 80px;
+        height: 150px;
+        position: absolute; 
+        z-index: 2;
+        margin-top: -155px; /* Ajuste o valor para mover a imagem para cima */
+        transform: translate(-50%, -50%);
+    }
+    
+
+    #fotoPerfilWrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
