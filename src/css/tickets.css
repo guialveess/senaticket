@@ -83,7 +83,7 @@ body {
   font-size: 24px;
   text-align: center;
   margin-top: 80px;
-  margin-bottom: 5px; /* Espaçamento entre o título e o parágrafo */
+  margin-bottom: 5px; 
 }
 
 #email {
@@ -111,16 +111,15 @@ button {
   height: 39px;
   border: 0;
   background: #ffffff;
-  border-radius: 10px;
-  padding: 7px 20px;
+  border-radius: 12px;
   color: #000;
   font-family: "Roboto", sans-serif;
-  font-weight: 900;
+  font-weight: 700;
   position: absolute;
-  top: 52%; /* Posiciona o topo do botão no meio do card */
-  left: 50%; /* Posiciona a esquerda do botão no meio do card */
-  transform: translate(-50%, -50%); /* Centraliza o botão precisamente */
-  pointer-events: auto; /* Permite que o botão receba eventos de clique */
+  top: 52%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  pointer-events: auto; 
 }
 
 button:hover {
@@ -151,7 +150,7 @@ button:hover {
 
 #qrcode-2 {
   position: absolute;
-  top: 63%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -166,7 +165,7 @@ button:hover {
   padding: 7px 20px;
   color: #000;
   font-family: "Roboto", sans-serif;
-  font-weight: 900;
+  font-weight: 600;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -245,7 +244,7 @@ hr {
   height: 150px;
   position: absolute;
   z-index: 2;
-  margin-top: -155px; /* Ajuste o valor para mover a imagem para cima */
+  margin-top: -155px;
   transform: translate(-50%, -50%);
 }
 

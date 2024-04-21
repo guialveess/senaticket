@@ -40,17 +40,17 @@ document.addEventListener("DOMContentLoaded", async function () {
   }
 
   if (!emailUser) {
-    console.error("email não encontrado.");
+    console.error("Email não encontrado.");
     return; // Encerra se não houver código armazenado
   }
-  console.log("passou validações");
+  console.log("Passou validações");
 
   try {
     const response = await axios.post(BASE_URL + "ingressUser", {
       email: emailUser,
       codigo: ingressoCode,
     });
-    console.log("passou request");
+    console.log("Passou request");
 
     const data = response.data;
     console.log(data);
