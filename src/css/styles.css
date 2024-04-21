@@ -44,7 +44,7 @@ body {
   width: 90%;
   max-width: 400px;
   height: 55px;
-  background-color: #EBEBEB;
+  background-color: #ebebeb;
   border-radius: 60px;
   text-align: center;
   margin: auto;
@@ -66,7 +66,7 @@ body {
     transform: translate(-50%, -50%) rotate(0deg);
   }
   to {
-    transform: translate(-50%, -50%) rotate(360deg); 
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 @media only screen and (min-width: 768px) {
@@ -75,7 +75,7 @@ body {
   }
 }
 
-h1{
+h1 {
   margin: 0;
   font-family: "Inter", sans-serif;
   font-style: normal;
@@ -87,8 +87,8 @@ h2 {
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
-  color: #FFFFFF;
-  transition: all .3s ease-out;
+  color: #ffffff;
+  transition: all 0.3s ease-out;
   text-align: center;
   margin-top: 9rem;
   margin-bottom: 40px;
@@ -100,7 +100,7 @@ h2 {
   border: 1px solid white;
   border-radius: 10px;
   padding: 10px;
-  color: #EBEBEB;
+  color: #ebebeb;
   margin-bottom: 13px;
   margin-left: auto;
   margin-right: auto;
@@ -121,9 +121,9 @@ h2 {
 }
 
 input {
-  font-style: 'Roboto', sans-serif;
+  font-style: "Roboto", sans-serif;
   font-weight: 500;
-  color: #FFFFFF;
+  color: #ffffff;
   all: unset;
 }
 
@@ -141,7 +141,7 @@ input {
   gap: 12px;
 }
 
-#codigo-gerado{
+#codigo-gerado {
   color: #f37c37;
   text-align: center;
   margin-bottom: 20px;
@@ -151,11 +151,12 @@ button {
   width: 335px;
   height: 53px;
   border: 0;
-  background: #F48F56;
+  background: #f48f56;
   border-radius: 10px;
   padding: 7px 20px;
-  color: #FFFFFF;
-  font: 700 12px/24px 'Roboto', sans-serif;
+  color: #ffffff;
+  font: 700 12px/24px "Roboto", sans-serif;
+  cursor: pointer;
 }
 
 button:hover {
@@ -168,7 +169,7 @@ a {
   display: block;
   text-align: center;
   margin-top: 20px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
 }
 
@@ -189,8 +190,8 @@ a {
   height: auto;
   position: absolute;
   border-radius: 20px;
-  top: 0px; 
-  left: 2px; 
+  top: 0px;
+  left: 2px;
   z-index: 1;
 }
 
@@ -200,31 +201,31 @@ a {
 }
 
 .quebra img {
-  max-width: 200px; 
+  max-width: 200px;
   height: auto;
-  border-radius: 10px; 
+  border-radius: 10px;
   margin-top: 20px;
   margin-left: 130px;
 }
 
 .faixa img {
-  max-width: 999px; 
-  height: auto; 
+  max-width: 999px;
+  height: auto;
   margin-top: -235px;
   margin-left: 140px;
 }
 
 .vertical-line {
   width: 2px;
-  height: 70vh; 
-  background-color: #fdc0bf; 
+  height: 70vh;
+  background-color: #fdc0bf;
   position: absolute;
-  left: 50%; 
-  transform: translateX(-50%); 
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
-  justify-content: space-between; 
-  align-items: center; 
+  justify-content: space-between;
+  align-items: center;
   padding: 20px 0;
   transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
 }
@@ -236,19 +237,19 @@ a {
 }
 
 .dot::before {
-  content: '';  
+  content: "";
   width: 10px;
   height: 10px;
   background-color: white;
-  border-radius: 50%; 
-  margin-right: 0px; 
-  transition: opacity 0.5s; 
+  border-radius: 50%;
+  margin-right: 0px;
+  transition: opacity 0.5s;
 }
 
 .timeex {
   font-size: 15px;
   margin-bottom: 5px;
-  color: #EBEBEB;
+  color: #ebebeb;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -271,7 +272,7 @@ a {
 }
 
 .dot-1::before {
-  top: 0; 
+  top: 0;
 }
 
 .dot-2::before {
@@ -279,7 +280,7 @@ a {
 }
 
 .dot-3::before {
-  bottom: 0; 
+  bottom: 0;
 }
 
 .left {
@@ -295,12 +296,12 @@ h3 {
   font-weight: 1200;
   font-style: normal;
   font-size: 24px;
-  color: #FFFFFF;
-  transition: all .3s ease-out;
+  color: #ffffff;
+  transition: all 0.3s ease-out;
   text-align: center;
 }
 
-#experiencetext1{
+#experiencetext1 {
   margin-bottom: 70px;
   margin-top: 30px;
   font-family: "Inter", sans-serif;
