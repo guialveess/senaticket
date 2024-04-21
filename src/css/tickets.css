@@ -1,267 +1,257 @@
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    
-    body{
-        background-color: #121214
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    .top-bar {
-        position: relative;
-        top: 0;
-        left: 0;
-        font-family: "Roboto", sans-serif;
-        font-weight: 400;
-        width: 100%;
-        height: 60px;
-        background-color: rgba(200, 200, 200, 0.04);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
-        z-index: 99;
-    }
-    
-    .container {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-    }
+body {
+  background-color: #121214;
+}
 
+.top-bar {
+  position: relative;
+  top: 0;
+  left: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(200, 200, 200, 0.04);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  z-index: 99;
+}
 
-    /* #faixa {
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* #faixa {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        top: -3%; 
+        top: -3%;
         z-index: 99;
     } */
 
-    /* #quebra {
+/* #quebra {
         position: absolute;
         left: -5%;
         transform: translateX(-50%);
-        top: -5%; 
+        top: -5%;
         z-index: 99;
     } */
 
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 327px;
+  height: auto;
+  height: 604px;
+  background-color: #1e293b;
+  border-radius: 16px;
+}
 
-    
+.quebra {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 96px;
+  height: 10px;
+  background-color: #000;
+  border-radius: 12px;
+}
 
-    .card {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 327px;
-        height: auto; 
-        height: 604px;
-        background-color: #1E293B;
-        border-radius: 16px;
-    }
+#name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    .quebra {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 96px;
-        height: 10px;
-        background-color: #000;
-        border-radius: 12px;
-    }
+#name h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #ffffff;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 5px; /* Espaçamento entre o título e o parágrafo */
+}
 
-    #name {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+#email {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 0;
+}
 
+.amplier {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-    #name h1 {
-        font-family: "Roboto", sans-serif;
-        font-weight: 700;
-        font-style: normal;
-        color: #ffffff;
-        font-size: 24px; 
-        text-align: center;
-        margin-top: 80px;
-        margin-bottom: 5px; /* Espaçamento entre o título e o parágrafo */
-    }
+button {
+  width: 191px;
+  height: 39px;
+  border: 0;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 7px 20px;
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  position: absolute;
+  top: 52%; /* Posiciona o topo do botão no meio do card */
+  left: 50%; /* Posiciona a esquerda do botão no meio do card */
+  transform: translate(-50%, -50%); /* Centraliza o botão precisamente */
+  pointer-events: auto; /* Permite que o botão receba eventos de clique */
+}
 
-    #email {
-        font-family: "Roboto", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        color: #ffffff;
-        font-size: 14px;
-        text-align: center;
-        margin-top: 0;
-    }
+button:hover {
+  background-color: #f37c37;
+}
 
-    .amplier {
-        font-family: "Roboto", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        color: #ffffff;
-        font-size: 14px;
-        text-align: center;
-        margin-bottom: 20px;
-    }
+.left-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 12px;
+  padding-left: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: white; /* cor do texto */
+}
 
-    button {
-        width: 191px;
-        height: 39px;
-        border: 0;
-        background: #ffffff;
-        border-radius: 10px;
-        padding: 7px 20px;
-        color: #000;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 900;
-        position: absolute;
-        top: 52%; /* Posiciona o topo do botão no meio do card */
-        left: 50%; /* Posiciona a esquerda do botão no meio do card */
-        transform: translate(-50%, -50%); /* Centraliza o botão precisamente */
-        pointer-events: auto; /* Permite que o botão receba eventos de clique */
-    }
+.right-text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 12px;
+  padding-right: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: white; /* cor do texto */
+}
 
+#qrcode-2 {
+  position: absolute;
+  top: 63%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-    button:hover{
-        background-color: #f37c37;
-    }
+#btncodingress {
+  width: 50%;
+  max-width: 191px;
+  height: 39px;
+  border: 0;
+  background: #ed7e7e;
+  border-radius: 10px;
+  padding: 7px 20px;
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  margin-top: 305px;
+}
 
+@media only screen and (max-device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
+  #btncodingress {
+    margin-top: 310px;
+  }
+}
 
-    .left-text {
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding: 12px;
-        padding-left: 20px;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 700;
-        color: white; /* cor do texto */
-    }
+#btncodingress:hover {
+  background: #f37c37;
+}
 
-    .right-text {
-        position: absolute;
-        top: 0;
-        right: 0;
-        padding: 12px;
-        padding-right: 20px;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 700;
-        color: white; /* cor do texto */
-    }
+.centered-svg {
+  color: white;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-    #qrcode-2 {
-        position: absolute;
-        top: 63%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #ffffff;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 5px;
+}
 
-    #btncodingress {
-        width: 50%;
-        max-width: 191px;
-        height: 39px;
-        border: 0;
-        background: #ED7E7E;
-        border-radius: 10px;
-        padding: 7px 20px;
-        color: #000;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 900;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 50%; 
-        margin-top: 305px;
-    }
+p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 5px;
+}
 
-    @media only screen and (max-device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
-        #btncodingress {
-            margin-top: 310px;
-        }
-    }
+hr {
+  background-color: rgba(200, 200, 200, 0.1);
+  height: 1px;
+  border: 0;
+}
 
+#buttonShare {
+  width: 327px;
+  height: 52px;
+  border: 0;
+  background: #35374b;
+  border-radius: 10px;
+  padding: 7px 20px;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  margin-top: 20px;
+}
 
-    #btncodingress:hover {
-        background: #f37c37;
-    }
+#buttonShare:hover {
+  background-color: #fff;
+  color: #000;
+}
 
-    .centered-svg {
-        color: white;
-        position: relative;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+#fotoPerfil {
+  width: 150px;
+  border-radius: 80px;
+  height: 150px;
+  position: absolute;
+  z-index: 2;
+  margin-top: -155px; /* Ajuste o valor para mover a imagem para cima */
+  transform: translate(-50%, -50%);
+}
 
-    h1 {
-        font-family: "Roboto", sans-serif;
-        font-weight: 700;
-        font-style: normal;
-        color: #ffffff;
-        font-size: 24px; 
-        text-align: center;
-        margin-bottom: 5px;
-    }
-
-    p {
-        font-family: "Roboto", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        color: #ffffff;
-        font-size: 14px;    
-        text-align: center;
-        margin-bottom: 5px;
-    }
-
-    hr {
-        background-color: rgba(200, 200, 200, 0.1);
-        height: 1px;
-        border: 0;
-    }
-    
-
-    #buttonShare {
-        width: 327px;
-        height: 52px;
-        border: 0;
-        background: #35374B;
-        border-radius: 10px;
-        padding: 7px 20px;
-        color: #fff;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 900;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 100%; 
-        margin-top: 20px;
-    }
-
-    #buttonShare:hover{
-        background-color: #fff;
-        color: #000;
-    }
-
-    #fotoPerfil {
-        width: 150px;
-        border-radius: 80px;
-        height: 150px;
-        position: absolute; 
-        z-index: 2;
-        margin-top: -155px; /* Ajuste o valor para mover a imagem para cima */
-        transform: translate(-50%, -50%);
-    }
-    
-
-    #fotoPerfilWrapper {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+#fotoPerfilWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
