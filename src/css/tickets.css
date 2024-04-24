@@ -114,7 +114,7 @@ button {
   border-radius: 12px;
   color: #000;
   font-family: "Roboto", sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   position: absolute;
   top: 52%; 
   left: 50%; 
@@ -165,7 +165,7 @@ button:hover {
   padding: 7px 20px;
   color: #000;
   font-family: "Roboto", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -216,7 +216,7 @@ hr {
   border: 0;
 }
 
-#buttonShare {
+#downloadPDF {
   width: 327px;
   height: 52px;
   border: 0;
@@ -231,9 +231,12 @@ hr {
   transform: translateX(-50%);
   top: 100%;
   margin-top: 20px;
+  cursor: pointer;
 }
 
-#buttonShare:hover {
+
+
+#downloadPDF:hover {
   background-color: #fff;
   color: #000;
 }

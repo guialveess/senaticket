@@ -47,3 +47,11 @@ document.addEventListener("DOMContentLoaded", async function () {
     console.error("Erro ao carregar dados do usuário:", error);
   }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const button = document.querySelector('#downloadPDF');
+  button.addEventListener('click', function() {
+      const element = document.querySelector('.container');
+      html2pdf(element);
+  });
+});
