@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async function () {
-  const BASE_URL = "http://localhost:3000/"; // URL base da API
+  const BASE_URL = "http://localhost:3001/"; // URL base da API
 
   const ingressoCode = localStorage.getItem("codIngresso");
   const emailUser = localStorage.getItem("email");
@@ -31,6 +31,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     document.querySelector(".button-wrapper2 button").textContent =
       "#" + data.codIngresso;
 
+    // Atualizar a foto do usuário
+    document.querySelector("#fotoPerfil").src = data.foto;
+
     // Atualiza o QR Code com o código do ingresso
     var qrcode = new QRCode(document.getElementById("qrcode-2"), {
       text: data.codIngresso,
@@ -40,18 +43,33 @@ document.addEventListener("DOMContentLoaded", async function () {
       colorLight: "transparent", // torna a cor branca transparente
       correctLevel: QRCode.CorrectLevel.H,
     });
-
-    // Atualizar a foto do usuário
-    document.querySelector(".card #fotoPerfil").src = data.foto;
   } catch (error) {
     console.error("Erro ao carregar dados do usuário:", error);
   }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  const button = document.querySelector('#downloadPDF');
-  button.addEventListener('click', function() {
-      const element = document.querySelector('.container');
-      html2pdf(element);
+function submitForm() {
+  html2canvas(document.getElementById("element-to-print"), {
+    useCORS: true, // Permite carregar imagens de origens cruzadas
+    logging: true, // Ativa o log para diagnóstico
+    letterRendering: 1,
+    allowTaint: false, // Não permite renderizar imagens que não seguem a política CORS
+  }).then((canvas) => {
+    const pdf = new jspdf.jsPDF("p", "mm", "a4");
+    let width = pdf.internal.pageSize.getWidth();
+    let height = pdf.internal.pageSize.getHeight();
+    let imgWidth = (canvas.width * height) / canvas.height;
+    let x = (width - imgWidth) / 2;
+    pdf.addImage(canvas.toDataURL("image/png"), "PNG", x, 0, imgWidth, height);
+    pdf.save("meu-ingresso.pdf");
   });
-});
+}
+
+//document.addEventListener("DOMContentLoaded", function () {
+//submitForm();
+// const button = document.querySelector("#downloadPDF");
+// button.addEventListener("click", function () {
+//   const element = document.querySelector(".container");
+//   html2pdf(element);
+// });
+//});
