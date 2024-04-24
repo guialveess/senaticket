@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+    <!-- IMPORT PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!--  -->
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script src="./src/js/ticket.js"></script>
@@ -23,63 +29,66 @@
     <title>Ticket</title>
   </head>
   <body>
- <div class="top-bar">
-        Meu ingresso
-    </div>
-    <div class="container">
-        <!-- <img src="./assets/faixa.jpg" id="faixa" alt="faixa">
-        <img src="./assets/quebra.png" id="quebra" alt="quebra"> -->
-        <div class="faixa"></div>
-        <div class="card">
+    <span>
+      <div class="top-bar">Meu ingresso</div>
+
+      <div id="element-to-print">
+        <div class="container">
+          <!-- <img src="./assets/faixa.jpg" id="faixa" alt="faixa">
+          <img src="./assets/quebra.png" id="quebra" alt="quebra"> -->
+          <div class="faixa"></div>
+          <div class="card">
             <div class="quebra"></div>
             <div id="fotoPerfilWrapper">
-                <img id="fotoPerfil"  alt="" srcset="">
+              <img id="fotoPerfil" crossorigin="anonymous" />
             </div>
             <div id="rectangleWrapper">
-                <img id="rectangle" src="./assets/Rectangle.png" alt="desenho">
+              <img id="rectangle" src="./assets/Rectangle.png" alt="desenho" />
             </div>
             <p class="left-text">21/04</p>
             <p class="right-text">Sena/Ticket</p>
-            <hr>
-        <div id="name">
-            <h1>
-                Guilherme Alves
-            </h1>
-            <p id="email">
-                97guilherme.alves@gmail.com
-            </p>
-        </div>
-    </div>
-        <div class="button-wrapper">
+            <hr />
+            <div id="name">
+              <h1>Guilherme Alves</h1>
+              <p id="email">97guilherme.alves@gmail.com</p>
+            </div>
+          </div>
+          <div class="button-wrapper">
             <button id="meuBotao" type="submit">Jogo: Sport</button>
-        </div>
+          </div>
 
-        <div id="qrcode-2">
+          <div id="qrcode-2">
             <p class="amplier">Ampliar Qr-Code</p>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="button-wrapper2">
-      <button id="btncodingress" type="submit">#00192</button>
-    </div>
 
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="40"
-      height="40"
-      viewBox="0 0 40 40"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="lucide lucide-chevrons-down centered-svg"
-    >
-      <path d="m7 6 5 5 5-5" />
-      <path d="m7 13 5 5 5-5" />
-    </svg>
-    <h1>Compartilhar meu Ingresso</h1>
-    <p>Compartilhe com seus amigos qual jogo você vai assistir!</p>
-    <button id="downloadPDF" type="submit">Compartilhar</button>
+        <div class="button-wrapper2">
+          <button id="btncodingress" type="submit">#00192</button>
+        </div>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="40"
+          viewBox="0 0 40 40"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-chevrons-down centered-svg"
+        >
+          <path d="m7 6 5 5 5-5" />
+          <path d="m7 13 5 5 5-5" />
+        </svg>
+      </div>
+      <h1>Compartilhar meu Ingresso</h1>
+
+      <p>Compartilhe com seus amigos qual jogo você vai assistir!</p>
+
+      <button id="downloadPDF" type="submit" onclick="submitForm()">
+        Compartilhar
+      </button>
+    </span>
   </body>
 </html>
