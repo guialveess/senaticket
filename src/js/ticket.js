@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async function () {
-  const BASE_URL = "http://localhost:3001/"; // URL base da API
+  const BASE_URL = "http://localhost:3000/"; // URL base da API
 
   const ingressoCode = localStorage.getItem("codIngresso");
   const emailUser = localStorage.getItem("email");
@@ -64,12 +64,3 @@ function submitForm() {
     pdf.save("meu-ingresso.pdf");
   });
 }
-
-//document.addEventListener("DOMContentLoaded", function () {
-//submitForm();
-// const button = document.querySelector("#downloadPDF");
-// button.addEventListener("click", function () {
-//   const element = document.querySelector(".container");
-//   html2pdf(element);
-// });
-//});
