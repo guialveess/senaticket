@@ -39,8 +39,8 @@ document.addEventListener("DOMContentLoaded", async function () {
       text: data.codIngresso,
       width: 120,
       height: 120,
-      colorDark: "#E1E1E6",
-      colorLight: "transparent", // torna a cor branca transparente
+      colorDark: "#000",
+      colorLight: "#f2f2f7", // torna a cor branca transparente
       correctLevel: QRCode.CorrectLevel.H,
     });
   } catch (error) {
