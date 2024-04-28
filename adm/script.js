@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   stopButton.addEventListener("click", pararCamera);
 });
 
-const BASE_URL = "https://api-foot-3.onrender.com//";
+const BASE_URL = "https://api-foot-3.onrender.com/";
 
 const video = document.getElementById("qr-video");
 const videoContainer = document.getElementById("qr-video-container");
