@@ -1,65 +1,84 @@
-// Função para enviar o código do ingresso e o novo status para a API
-function atualizarStatusIngresso(codigo, novoStatus) {
-  fetch("/api/updatestatus", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
+import QrScanner from "./lib/qrcodes/qr-scanner.min.js";
+
+document.addEventListener("DOMContentLoaded", (event) => {
+  const startButton = document.querySelector(".btn-success");
+  const stopButton = document.querySelector(".btn-cancel");
+
+  startButton.addEventListener("click", iniciarCamera);
+  stopButton.addEventListener("click", pararCamera);
+});
+
+const BASE_URL = "https://api-foot-3.onrender.com//";
+
+const video = document.getElementById("qr-video");
+const videoContainer = document.getElementById("qr-video-container");
+const camQrResult = document.getElementById("cam-qr-result");
+
+function setResult(label, result) {
+  onScanSuccess(result.data);
+}
+
+const scanner = new QrScanner(
+  video,
+  (result) => setResult(camQrResult, result),
+  {
+    onDecodeError: (error) => {
+      camQrResult.textContent = error;
+      camQrResult.style.color = "inherit";
     },
-    body: JSON.stringify({ codIngresso: codigo, Valido: novoStatus }),
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(
-          "Erro ao atualizar status do ingresso. Código: " + response.status
-        );
-      }
-      return response.json();
-    })
-    .then((data) => {
-      const status = data.Valido;
-      atualizarStatus(status);
-    })
-    .catch((error) => {
-      console.error("Erro ao atualizar status do ingresso:", error);
-    });
-}
-
-// Função para atualizar o status no HTML
-function atualizarStatus(status) {
-  const paragrafo = document.getElementById("status");
-  if (status === 1) {
-    paragrafo.textContent = "Ingresso válido.";
-  } else {
-    paragrafo.textContent = "Ingresso inválido.";
+    highlightScanRegion: true,
+    highlightCodeOutline: true,
   }
-}
+);
 
-// Função para marcar o ingresso como resgatado
-function marcarIngressoResgatado() {
-  const codigo = document.getElementById("codigo").value;
-  atualizarStatusIngresso(codigo, 0); // Marca o ingresso como resgatado (status 0)
-}
+const updateFlashAvailability = () => {
+  scanner.hasFlash().then((hasFlash) => {
+    camHasFlash.textContent = hasFlash;
+    flashToggle.style.display = hasFlash ? "inline-block" : "none";
+  });
+};
+
+QrScanner.hasCamera().then(
+  (hasCamera) => (camHasCamera.textContent = hasCamera)
+);
+
+//inicia a câmera
+scanner.start().then(() => {
+  updateFlashAvailability();
+
+  QrScanner.listCameras(true).then((cameras) =>
+    cameras.forEach((camera) => {
+      const option = document.createElement("option");
+      option.value = camera.id;
+      option.text = camera.label;
+      camList.add(option);
+    })
+  );
+});
+
+scanner.setInversionMode("both");
+
+videoContainer.className = "example-style-1";
+scanner._updateOverlay();
 
 async function tocarSom() {
-  console.log("CHEGOU AQUI");
-  var audio = new Audio("check.mp3");
+  var audio = new Audio("sonido.mp3");
   audio.addEventListener("canplaythrough", function () {
     audio.play();
   });
 }
 
-function formDataToJson(formData) {
-  const json = {};
-  formData.forEach((value, key) => {
-    json[key] = value;
-  });
-  return json;
+async function iniciarCamera() {
+  scanner.start();
+}
+
+async function pararCamera() {
+  scanner.stop();
 }
 
 async function onScanSuccess(qrCodeMessage) {
   await tocarSom();
-
-  console.log(qrCodeMessage);
+  pararCamera();
 
   const objCheck = {
     codIngresso: qrCodeMessage,
@@ -84,10 +103,7 @@ async function onScanSuccess(qrCodeMessage) {
 
   setTimeout(async () => {
     try {
-      //const jsonData = formDataToJson(objCheck);
       const response = await axios.post(BASE_URL + "changeIngress", objCheck);
-
-      console.log(response);
 
       // Remover a mensagem de loading
       document.body.removeChild(loadingMessage);
@@ -97,13 +113,5 @@ async function onScanSuccess(qrCodeMessage) {
     }
   }, 3000);
 }
-function onScanError(errorMessage) {
-  //handle scan error
-}
 
-var html5QrcodeScanner = new Html5QrcodeScanner("reader", {
-  fps: 10,
-  qrbox: 250,
-});
-
-html5QrcodeScanner.render(onScanSuccess, onScanError);
+export { iniciarCamera, pararCamera };
