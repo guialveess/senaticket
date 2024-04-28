@@ -149,8 +149,10 @@ button:hover {
 }
 
 #qrcode-2 {
+  width: 120px;
+  height: 120px;
   position: absolute;
-  top: 65%;
+  top: 63%;
   left: 50%;
   transform: translate(-50%, -50%);
 }

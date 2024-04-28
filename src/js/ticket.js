@@ -35,14 +35,15 @@ document.addEventListener("DOMContentLoaded", async function () {
     document.querySelector("#fotoPerfil").src = data.foto;
 
     // Atualiza o QR Code com o código do ingresso
-    var qrcode = new QRCode(document.getElementById("qrcode-2"), {
+    let qrcode = new QRCode(document.getElementById("qrcode-2"), {
       text: data.codIngresso,
       width: 120,
       height: 120,
-      colorDark: "#000",
-      colorLight: "#f2f2f7", // torna a cor branca transparente
+      colorDark: "#ffffff",
+      colorLight: "#000", // torna a cor branca transparente
       correctLevel: QRCode.CorrectLevel.H,
     });
+
   } catch (error) {
     console.error("Erro ao carregar dados do usuário:", error);
   }
@@ -64,3 +65,7 @@ function submitForm() {
     pdf.save("meu-ingresso.pdf");
   });
 }
+
+
+
+
