@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000/";
+const BASE_URL = "http://localhost:3001/";
 
 function formDataToJson(formData) {
   const json = {};
@@ -72,7 +72,7 @@ async function submitForm(event) {
   // Aguarda 3 segundos
   setTimeout(async () => {
     try {
-      const jsonData = formDataToJson(formData);
+      // const jsonData = formDataToJson(formData);
 
       const response = await axios.post(BASE_URL + "register", formData, {
         headers: {

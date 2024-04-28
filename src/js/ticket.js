@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async function () {
-  const BASE_URL = "http://localhost:3000/"; // URL base da API
+  const BASE_URL = "http://localhost:3001/"; // URL base da API
 
   const ingressoCode = localStorage.getItem("codIngresso");
   const emailUser = localStorage.getItem("email");
