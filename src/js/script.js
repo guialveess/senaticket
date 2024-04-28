@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000/";
+const BASE_URL = "https://api-foot-3.onrender.com/";
 
 function formDataToJson(formData) {
   const json = {};
@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   try {
     // Faz a chamada HTTP usando Axios
+
     const response = await axios.get(BASE_URL + "games");
     // Limpa o select
     select.innerHTML = "";
@@ -72,7 +73,7 @@ async function submitForm(event) {
   // Aguarda 3 segundos
   setTimeout(async () => {
     try {
-      const jsonData = formDataToJson(formData);
+      // const jsonData = formDataToJson(formData);
 
       const response = await axios.post(BASE_URL + "register", formData, {
         headers: {

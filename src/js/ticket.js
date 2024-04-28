@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", async function () {
-  const BASE_URL = "http://localhost:3000/"; // URL base da API
+const BASE_URL = "https://api-foot-3.onrender.com/";
 
+document.addEventListener("DOMContentLoaded", async function () {
   const ingressoCode = localStorage.getItem("codIngresso");
   const emailUser = localStorage.getItem("email");
 
@@ -43,7 +43,6 @@ document.addEventListener("DOMContentLoaded", async function () {
       colorLight: "#000", // torna a cor branca transparente
       correctLevel: QRCode.CorrectLevel.H,
     });
-
   } catch (error) {
     console.error("Erro ao carregar dados do usuário:", error);
   }
@@ -65,7 +64,3 @@ function submitForm() {
     pdf.save("meu-ingresso.pdf");
   });
 }
-
-
-
-
