@@ -4,6 +4,7 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
     <!-- IMPORT PDF -->
+    <script src="https://cdn.jsdelivr.net/npm/qrious"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <!--  -->
@@ -31,6 +32,7 @@
   <body>
     <span>
       <div class="top-bar">Meu ingresso</div>
+      <p id="status"></p>
 
       <div id="element-to-print">
         <div class="container">
@@ -57,8 +59,10 @@
             <button id="meuBotao" type="submit">Jogo: Sport</button>
           </div>
 
+
+        
           <div id="qrcode-2">
-            <p class="amplier">Ampliar Qr-Code</p>
+            <p id="status"></p>
           </div>
         </div>
 
