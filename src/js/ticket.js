@@ -68,9 +68,17 @@ function submitForm() {
     const pdf = new jspdf.jsPDF("p", "mm", "a4");
     let width = pdf.internal.pageSize.getWidth();
     let height = pdf.internal.pageSize.getHeight();
+    
+    // Adiciona um fundo preto à página A4
+    pdf.setFillColor(0, 0, 0); // Cor preta (RGB)
+    pdf.rect(0, 0, width, height, 'F'); // Desenha um retângulo preenchido
+    
     let imgWidth = (canvas.width * height) / canvas.height;
     let x = (width - imgWidth) / 2;
+    
+    // Adiciona a imagem renderizada ao PDF
     pdf.addImage(canvas.toDataURL("image/png"), "PNG", x, 0, imgWidth, height);
-    pdf.save("meu-ingresso.pdf");
+    
+    pdf.save("ticketingress.pdf");
   });
 }
