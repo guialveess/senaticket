@@ -263,7 +263,7 @@ hr {
   height: 120px; /* Deve ser o mesmo tamanho do QR code para alinhamento correto */
   left: 50%; /* Centraliza o bloco */
   transform: translateX(-50%);
-  top: 63%; /* Ajuste conforme necessário */
+  top: 60%; /* Ajuste conforme necessário */
 }
 
 .statusImagem {
