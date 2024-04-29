@@ -85,21 +85,40 @@ async function onScanSuccess(qrCodeMessage) {
     valido: false,
   };
 
-  const loadingMessage = document.createElement("div");
-  loadingMessage.textContent = "Carregando...";
-  loadingMessage.style.position = "fixed";
-  loadingMessage.style.left = "50%";
-  loadingMessage.style.top = "50%";
-  loadingMessage.style.transform = "translate(-50%, -50%)";
-  loadingMessage.style.fontSize = "20px";
-  loadingMessage.style.color = "white";
-  loadingMessage.style.zIndex = "1000";
-  loadingMessage.style.background = "rgba(0,0,0,0.8)";
-  loadingMessage.style.border = "3px solid white";
-  loadingMessage.style.padding = "10px 20px";
-  loadingMessage.style.borderRadius = "10px";
-  loadingMessage.style.boxShadow = "0 4px 6px rgba(0,0,0,0.1)";
-  document.body.appendChild(loadingMessage);
+const loadingMessage = document.createElement("div");
+loadingMessage.style.position = "fixed";
+loadingMessage.style.left = "50%";
+loadingMessage.style.top = "50%";
+loadingMessage.style.transform = "translate(-50%, -50%)";
+loadingMessage.style.zIndex = "500";
+loadingMessage.style.textAlign = "center";
+
+const checkIcon = document.createElement("i");
+checkIcon.className = "fas fa-check-circle";
+checkIcon.style.fontSize = "100px";
+checkIcon.style.color = "green";
+loadingMessage.appendChild(checkIcon);
+
+const successText = document.createElement("p");
+successText.textContent = "Ingresso resgatado com sucesso";
+successText.style.fontSize = "20px";
+successText.style.color = "white";
+successText.style.marginTop = "15px";
+loadingMessage.appendChild(successText);
+
+setTimeout(async () => {
+  try {
+    const response = await axios.post(BASE_URL + "changeIngress", objCheck);
+
+    // Remover a mensagem de loading
+    document.body.removeChild(loadingMessage);
+  } catch (error) {
+    console.error("Erro ao enviar formulário:", error);
+    document.body.removeChild(loadingMessage); // Garante a remoção do loading se houver erro
+  }
+}, 500); // Reduzido para 500 milissegundos (0.5 segundos)
+
+document.body.appendChild(loadingMessage);
 
   setTimeout(async () => {
     try {
