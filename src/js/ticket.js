@@ -34,8 +34,18 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Atualizar a foto do usuário
     document.querySelector("#fotoPerfil").src = data.foto;
 
+    // Verifica se o ingresso é válido e adiciona a imagem de sucesso
+    if (data.Valido === 0) {
+      const statusImg = document.createElement("img");
+      statusImg.src = "./assets/check_success.png";
+      statusImg.alt = "Ingresso Válido";
+      statusImg.classList.add("statusImagem");
+      document.querySelector(".containerQrCodeStatus").appendChild(statusImg);
+      statusImg.style.display = "block"; // Mostra a imagem se o ingresso for válido
+    }
+
     // Atualiza o QR Code com o código do ingresso
-    let qrcode = new QRCode(document.getElementById("qrcode-2"), {
+    new QRCode(document.getElementById("qrcode-2"), {
       text: data.codIngresso,
       width: 120,
       height: 120,
