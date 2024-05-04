@@ -116,10 +116,16 @@ button {
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   position: absolute;
-  top: 52%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: auto;
+}
+
+@media only screen and (max-width: 320px) and (max-height: 568px) {
+  button {
+    top: 55%; /* Ajuste o valor aqui */
+  }
 }
 
 button:hover {
@@ -154,6 +160,12 @@ button:hover {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  #qrcode-2 {
+    margin-top: -35px; /* Ajuste o valor aqui */
+  }
 }
 
 #btncodingress {
@@ -264,6 +276,12 @@ hr {
   left: 50%; /* Centraliza o bloco */
   transform: translateX(-50%);
   top: 60%; /* Ajuste conforme necessário */
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  .containerQrCodeStatus {
+    margin-top: 20px; /* Ajuste o valor aqui */
+  }
 }
 
 .statusImagem {
